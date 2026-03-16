@@ -1,0 +1,2 @@
+# An-Integrated-Data-Engineering-and-Data-Science-Framework-for-Machine-Learning
+Machine learning workflows involve complex steps like preprocessing, feature engineering, model selection, tuning, and deployment, which require expertise. This work presents a no-code AutoML platform built with PyCaret v3 and Streamlit that automates data ingestion, preprocessing, modeling, evaluation, and deployment.
