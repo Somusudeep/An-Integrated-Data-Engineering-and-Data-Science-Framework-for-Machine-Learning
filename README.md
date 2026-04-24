@@ -2,7 +2,6 @@
 ### *Automated Machine Learning Platform with Interactive Model Selection*
 
 > **B.Tech Major Project | 2026**  
-> Developed by **Sudee** · Powered by **PyCaret 3.2** & **Streamlit**
 
 ---
 
