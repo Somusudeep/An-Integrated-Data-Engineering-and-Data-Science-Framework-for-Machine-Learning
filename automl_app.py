@@ -27,143 +27,207 @@ st.set_page_config(
 )
 
 # ==========================================
-# CUSTOM CSS - PREMIUM PROFESSIONAL DESIGN
+# CUSTOM CSS - PROFESSIONAL DESIGN
 # ==========================================
 st.markdown("""
-<style>
-    /* Import modern typography */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-    :root {
-        --primary: #1E293B;      /* Deep Navy */
-        --accent: #4F46E5;       /* Indigo */
-        --bg-color: #F8FAFC;     /* Light Slate */
-        --card-bg: #FFFFFF;      /* Pure White */
-        --text-main: #000000;    /* Absolute Black */
-        --text-muted: #1E293B;   /* Deep Slate */
-        --border-color: #E2E8F0; /* Sharp Border */
-        --radius: 8px;
+    <style>
+    /* Import professional fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    
+    /* Global Styles */
+    * {
+        font-family: 'Poppins', sans-serif;
     }
-
-    /* Global Foundation */
-    .stApp {
-        background: var(--bg-color);
-        color: var(--text-main);
-        font-family: 'Inter', sans-serif;
+    
+    .main {
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
-
-    /* Sidebar - Heavy Professional */
-    [data-testid="stSidebar"] {
-        background-color: #0F172A !important;
-        border-right: 2px solid #1E293B;
+    
+    /* Headers */
+    h1 {
+        color: #1a1a2e;
+        font-weight: 700;
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
-
-    /* Headings - Classic bold */
-    h1, h2, h3 {
-        color: #000000 !important;
-        font-weight: 800 !important;
-        letter-spacing: -0.02em;
+    
+    h2 {
+        color: #16213e;
+        font-weight: 600;
+        font-size: 1.8rem !important;
+        margin-top: 2rem;
+        border-bottom: 3px solid #0f3460;
+        padding-bottom: 0.5rem;
     }
-
-    h1 { font-size: 2.5rem !important; margin-bottom: 1.5rem !important; border-left: 8px solid #1E293B; padding-left: 15px; }
-    h2 { font-size: 1.6rem !important; border-bottom: 3px solid #1E293B; padding-bottom: 0.5rem; margin-top: 2rem !important; }
-    h3 { font-size: 1.25rem !important; color: #1E3A8A !important; margin-top: 1.5rem !important; }
-
-    /* Classic Professional Cards */
+    
+    h3 {
+        color: #0f3460;
+        font-weight: 600;
+        font-size: 1.3rem !important;
+    }
+    
+    /* Cards and Containers */
     .stCard {
-        background: var(--card-bg);
-        border: 1px solid #CBD5E1;
-        border-radius: var(--radius);
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        margin: 1rem 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    /* Standard Professional Buttons */
+    
+    .stCard:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    
+    /* Buttons */
     .stButton>button {
         width: 100%;
-        background-color: #1E293B;
-        color: #FFFFFF !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.75rem 2rem;
         border: none;
-        padding: 1rem;
-        border-radius: 6px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        transition: all 0.3s ease;
+    }
+    
+    .stButton>button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+    
+    .stButton>button:active {
+        transform: translateY(0);
+    }
+    
+    /* Metrics */
+    [data-testid="stMetricValue"] {
+        font-size: 2rem;
         font-weight: 700;
+        color: #667eea;
+    }
+    
+    [data-testid="stMetricLabel"] {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #666;
         text-transform: uppercase;
         letter-spacing: 1px;
-        transition: background 0.2s;
     }
-
-    .stButton>button:hover {
-        background-color: #334155;
-        border: none;
-        color: #FFFFFF !important;
+    
+    /* Data Tables */
+    .dataframe {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
-    /* Metric Clarity */
-    [data-testid="stMetricValue"] {
-        color: #000000 !important;
-        font-weight: 800;
-        font-size: 2.8rem !important;
+    
+    /* Sidebar */
+    .css-1d391kg {
+        background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
     }
-
-    [data-testid="stMetricLabel"] {
-        color: #475569 !important;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.85rem;
+    
+    .sidebar .sidebar-content {
+        background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+        color: white;
     }
-
-    /* Input Widgets - Forced Visibility (Main Area) */
-    .stRadio [data-testid="stWidgetLabel"], 
-    .stSelectbox [data-testid="stWidgetLabel"],
-    .stSlider [data-testid="stWidgetLabel"],
-    .stCheckbox label {
-        color: #000000 !important;
-        font-weight: 700 !important;
-        font-size: 1rem !important;
+    
+    /* Progress Bars */
+    .stProgress > div > div > div > div {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     }
-
-    /* Sidebar-Specific Overrides (Dark Theme Visibility) */
-    [data-testid="stSidebar"] .stRadio [data-testid="stWidgetLabel"],
-    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
-    [data-testid="stSidebar"] .stRadio label {
-        color: #FFFFFF !important;
-        font-weight: 700 !important;
+    
+    /* Alerts */
+    .stAlert {
+        border-radius: 10px;
+        border-left: 5px solid #667eea;
+        background: rgba(102, 126, 234, 0.1);
+        padding: 1rem;
     }
-
-    [data-testid="stSidebar"] .stRadio [aria-checked="true"] {
-        background-color: #1E293B !important;
-        color: #FFFFFF !important;
-        border: 1px solid #FFFFFF !important;
+    
+    /* Success */
+    .success-box {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        box-shadow: 0 4px 15px rgba(17, 153, 142, 0.3);
     }
-
-
-    /* Tabs - Clean Underline Style */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 20px;
-        border-bottom: 2px solid #E2E8F0;
+    
+    /* Model Card */
+    .model-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 0.5rem 0;
+        border-left: 4px solid #667eea;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
     }
-
-    .stTabs [data-baseweb="tab"] {
-        background-color: transparent;
-        padding: 10px 20px;
-        font-weight: 700;
-        color: #64748B;
-        border: none;
+    
+    .model-card:hover {
+        border-left: 4px solid #764ba2;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-
-    .stTabs [aria-selected="true"] {
-        color: #1E293B !important;
-        border-bottom: 4px solid #1E293B !important;
-    }
-
-    /* Dataframes */
-    [data-testid="stDataFrame"] {
-        border: 2px solid #E2E8F0;
+    
+    /* Code Blocks */
+    code {
+        font-family: 'JetBrains Mono', monospace;
+        background: #f4f4f4;
+        padding: 0.2rem 0.4rem;
         border-radius: 4px;
+        color: #e74c3c;
     }
-</style>
-
+    
+    /* Upload Area */
+    [data-testid="stFileUploader"] {
+        background: white;
+        border: 2px dashed #667eea;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    /* Selectbox */
+    .stSelectbox > div > div {
+        background: white;
+        border-radius: 8px;
+        border: 2px solid #e0e0e0;
+    }
+    
+    /* Checkbox */
+    .stCheckbox {
+        background: white;
+        padding: 0.5rem;
+        border-radius: 8px;
+    }
+    
+    /* Tab Styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 8px;
+        background: white;
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        border-radius: 8px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 600;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    </style>
 """, unsafe_allow_html=True)
 
 # ==========================================
@@ -200,14 +264,12 @@ if 'training_complete' not in st.session_state:
 # SIDEBAR NAVIGATION
 # ==========================================
 st.sidebar.markdown("""
-    <div style='text-align: center; padding: 2.5rem 0.5rem; background: #1E293B; 
-    border-radius: 0; border-bottom: 2px solid rgba(255,255,255,0.1); margin-bottom: 2rem;'>
-        <h1 style='color: white; font-size: 2.1rem; margin: 0; font-family: "Inter", sans-serif; font-weight: 800;'>🤖 AUTO-ML</h1>
-        <p style='color: #94A3B8; margin: 0.5rem 0 0 0; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;'>Classic Edition 2026</p>
+    <div style='text-align: center; padding: 2rem 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    border-radius: 15px; margin-bottom: 2rem;'>
+        <h1 style='color: white; font-size: 2rem; margin: 0;'>🤖 AutoML</h1>
+        <p style='color: rgba(255,255,255,0.9); margin: 0.5rem 0 0 0; font-size: 0.9rem;'>Professional Edition</p>
     </div>
 """, unsafe_allow_html=True)
-
-
 
 pages = [
     "📤 Upload Dataset",
@@ -246,29 +308,27 @@ for idx, p in enumerate(pages):
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
-<div style='background: rgba(255,255,255,0.08); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);'>
-    <h4 style='margin: 0 0 1rem 0; color: #FFFFFF; font-size: 1rem; border-bottom: 2px solid #FFFFFF; padding-bottom: 0.5rem; font-weight: 800;'>🚀 CORE FEATURES</h4>
-    <ul style='margin: 0; padding-left: 1.2rem; font-size: 0.9rem; color: #FFFFFF; line-height: 2; font-weight: 600;'>
-        <li>💎 Premium UI Interface</li>
-        <li>🎯 Model Selection Suite</li>
-        <li>🔧 Smart Preprocessing</li>
-        <li>📊 Deep Analytics EDA</li>
-        <li>🧠 Explainable AI (SHAP)</li>
-        <li>🔗 Ensemble Orchestrator</li>
+<div style='background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; color: white;'>
+    <h4 style='margin: 0 0 0.5rem 0; color: white;'>📚 Features</h4>
+    <ul style='margin: 0; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.8;'>
+        <li>🎯 Smart Task Detection</li>
+        <li>🔧 Auto Preprocessing</li>
+        <li>🤖 20+ ML Algorithms</li>
+        <li>📊 Interactive Visualizations</li>
+        <li>🎨 Model Selection UI</li>
+        <li>🔗 Ensemble Methods</li>
+        <li>🚀 Easy Deployment</li>
     </ul>
 </div>
 """, unsafe_allow_html=True)
 
-
-
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
-<div style='text-align: center; color: #FFFFFF; font-size: 0.8rem; padding: 1rem; font-weight: 700;'>
+<div style='text-align: center; color: rgba(255,255,255,0.7); font-size: 0.75rem; padding: 1rem;'>
     <p style='margin: 0;'>AutoML Platform v2.0</p>
-    <p style='margin: 0.25rem 0 0 0; color: #94A3B8;'>Powered by PyCaret & Streamlit</p>
+    <p style='margin: 0.25rem 0 0 0;'>Powered by PyCaret & Streamlit</p>
 </div>
 """, unsafe_allow_html=True)
-
 
 print(f"Current page content will follow for: {st.session_state.page}")
 
@@ -277,10 +337,9 @@ print(f"Current page content will follow for: {st.session_state.page}")
 # ==========================================
 if st.session_state.page == 'Upload':
     st.markdown("<h1>📤 Dataset Upload</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 1.2rem; color: #64748B; margin-bottom: 2rem;'>Upload your CSV file to begin your automated machine learning journey.</p>", unsafe_allow_html=True)
+    st.markdown("### Upload your CSV file to begin your machine learning journey")
     
-    col1, col2 = st.columns([2, 1], gap="large")
-
+    col1, col2 = st.columns([2, 1])
     
     with col1:
         uploaded_file = st.file_uploader(
@@ -375,8 +434,7 @@ elif st.session_state.page == 'Selection':
             st.rerun()
     else:
         st.markdown("<h1>🎯 Column Selection</h1>", unsafe_allow_html=True)
-        st.markdown("<p style='font-size: 1.2rem; color: #64748B; margin-bottom: 2rem;'>Define your machine learning task by selecting target and feature columns.</p>", unsafe_allow_html=True)
-
+        st.markdown("### Define your machine learning task by selecting target and feature columns")
         
         df = st.session_state.df
         
@@ -580,9 +638,7 @@ elif st.session_state.page == 'Preprocessing':
             st.session_state.page = 'Selection'
             st.rerun()
     else:
-        st.markdown("<h1>🔧 Data Intelligence & Preprocessing</h1>", unsafe_allow_html=True)
-        st.markdown("<p style='font-size: 1.2rem; color: #64748B; margin-bottom: 2rem;'>Analyze data patterns and prepare your dataset for optimal model performance.</p>", unsafe_allow_html=True)
-
+        st.markdown("<h1>🔧 Data Preprocessing & Analysis</h1>", unsafe_allow_html=True)
         
         df = st.session_state.df
         target = st.session_state.target_column
@@ -644,53 +700,32 @@ elif st.session_state.page == 'Preprocessing':
             viz_df = st.session_state.preprocessed_df
             
             st.markdown("---")
-            st.markdown("### 📊 Advanced Data Intelligence")
+            st.markdown("### 📊 Exploratory Data Analysis")
             
-            tab1, tab2, tab3 = st.tabs(["🔍 Missing Data", "🔥 Correlation Matrix", "📈 Distribution Analytics"])
+            tab1, tab2, tab3 = st.tabs(["📈 Distributions", "🔥 Correlations", "🎯 Target Analysis"])
             
             with tab1:
-                st.markdown("#### Data Completeness Analysis")
-                missing_data = viz_df.isnull().sum()
-                if missing_data.sum() > 0:
-                    fig = px.bar(x=missing_data.index, y=missing_data.values, 
-                               labels={'x': 'Feature', 'y': 'Missing Count'},
-                               title='Missing Values per Feature',
-                               color_discrete_sequence=['#EF4444'])
+                numeric_features = viz_df.select_dtypes(include=[np.number]).columns.tolist()
+                if len(numeric_features) > 1:
+                    selected_feature = st.selectbox("Select feature to visualize:", numeric_features[:10])
+                    fig = px.histogram(viz_df, x=selected_feature, color_discrete_sequence=['#667eea'])
                     st.plotly_chart(fig, use_container_width=True)
-                else:
-                    st.success("✨ Excellent! Your dataset has no missing values.")
             
             with tab2:
-                st.markdown("#### Feature Interaction Heatmap")
                 numeric_df = viz_df.select_dtypes(include=[np.number])
                 if len(numeric_df.columns) > 1:
-                    corr_matrix = numeric_df.corr().round(2)
-                    fig = px.imshow(corr_matrix, 
-                                  text_auto=True, 
-                                  color_continuous_scale='RdBu_r', 
-                                  aspect="auto",
-                                  title="Pearson Correlation Coefficient")
-                    fig.update_layout(height=600)
+                    corr_matrix = numeric_df.corr()
+                    fig = px.imshow(corr_matrix, color_continuous_scale='RdBu_r', zmin=-1, zmax=1)
                     st.plotly_chart(fig, use_container_width=True)
-                else:
-                    st.info("Insufficient numeric features for correlation analysis.")
             
             with tab3:
-                st.markdown("#### Feature Distribution Suite")
-                cols = st.columns(2)
-                numeric_features = viz_df.select_dtypes(include=[np.number]).columns.tolist()
-                
-                with cols[0]:
-                    f1 = st.selectbox("Feature A:", numeric_features, index=0)
-                    fig1 = px.histogram(viz_df, x=f1, color_discrete_sequence=['#4F46E5'], marginal="box")
-                    st.plotly_chart(fig1, use_container_width=True)
-                
-                with cols[1]:
-                    if len(numeric_features) > 1:
-                        f2 = st.selectbox("Feature B:", numeric_features, index=min(1, len(numeric_features)-1))
-                        fig2 = px.violin(viz_df, y=f2, color_discrete_sequence=['#7C3AED'], box=True)
-                        st.plotly_chart(fig2, use_container_width=True)
-
+                if st.session_state.problem_type == 'classification':
+                    class_dist = viz_df[target].value_counts()
+                    fig = px.pie(values=class_dist.values, names=class_dist.index, hole=0.4)
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    fig = px.box(viz_df, y=target, color_discrete_sequence=['#667eea'])
+                    st.plotly_chart(fig, use_container_width=True)
             
             # Navigation
             st.markdown("---")
@@ -713,9 +748,8 @@ elif st.session_state.page == 'Modeling':
         st.warning("⚠️ Please complete previous steps!")
         st.stop()
     
-    st.markdown("<h1>🚀 Model Intelligence Engine</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 1.2rem; color: #64748B; margin-bottom: 2rem;'>Configure and train multiple high-performance machine learning models simultaneously.</p>", unsafe_allow_html=True)
-
+    st.markdown("<h1>🚀 Model Training & Selection</h1>", unsafe_allow_html=True)
+    st.markdown("### Professional AutoML with interactive model selection")
     
     # Use preprocessed data if available, otherwise use original
     df = st.session_state.preprocessed_df if st.session_state.preprocessed_df is not None else st.session_state.df
@@ -923,7 +957,7 @@ elif st.session_state.page == 'Modeling':
 
 
 # ==========================================
-# PAGE 5: MODEL RESULTS & INTELLIGENCE
+# PAGE 5: MODEL RESULTS
 # ==========================================
 elif st.session_state.page == 'Results':
     if st.session_state.best_model is None:
@@ -932,153 +966,84 @@ elif st.session_state.page == 'Results':
             st.session_state.page = 'Modeling'
             st.rerun()
     else:
-        st.markdown("<h1>📊 Model Intelligence Report</h1>", unsafe_allow_html=True)
-        st.markdown("<p style='font-size: 1.2rem; color: #64748B; margin-bottom: 2rem;'>Detailed performance analysis and explainability report for your finalized model.</p>", unsafe_allow_html=True)
+        st.markdown("<h1>📊 Model Performance & Results</h1>", unsafe_allow_html=True)
         
         problem_type = st.session_state.problem_type
+        
+        # Import PyCaret
+        if problem_type == 'classification':
+            from pycaret.classification import plot_model, pull
+        else:
+            from pycaret.regression import plot_model, pull
+        
         model = st.session_state.best_model
-        comparison_df = st.session_state.comparison_df
         
-        # Model Overview Cards
-        st.markdown("### 🏆 Model Overview")
-        m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+        # Model Info
+        st.markdown("### 🏆 Model Information")
         
-        with m_col1:
-            st.metric("Final Model", type(model).__name__)
-        with m_col2:
-            st.metric("Task Type", problem_type.upper())
-        with m_col3:
-            if problem_type == 'classification':
-                best_score = comparison_df.iloc[0]['Accuracy']
-                st.metric("Top Accuracy", f"{best_score:.2%}")
-            else:
-                best_score = comparison_df.iloc[0]['R2']
-                st.metric("Top R²", f"{best_score:.4f}")
-        with m_col4:
-            st.metric("Status", "DEPLOYED", delta="Production Ready")
-            
-        # Analysis Tabs
-        tab1, tab2, tab3, tab4 = st.tabs(["📊 Performance Comparison", "📈 Full Leaderboard", "🧠 Explainable AI (SHAP)", "🔍 Visual Insights"])
+        info_col1, info_col2, info_col3 = st.columns(3)
+        with info_col1:
+            st.metric("Model Type", type(model).__name__)
+        with info_col2:
+            st.metric("Task", problem_type.upper())
+        with info_col3:
+            st.metric("Status", "✅ Ready")
         
-        with tab1:
-            st.markdown("#### Holistic Model Comparison (Lollipop Chart)")
-            st.info("Visual comparison of the top 5 models across core performance metrics.")
+        # Model Comparison
+        if st.session_state.comparison_df is not None:
+            st.markdown("### 📈 All Models Performance")
+            st.dataframe(st.session_state.comparison_df, use_container_width=True)
+        
+        # Visualizations
+        st.markdown("### 📊 Performance Visualizations")
+        
+        if problem_type == 'classification':
+            viz_tabs = st.tabs(["Confusion Matrix", "AUC Curve", "Feature Importance"])
             
-            if comparison_df is not None:
-                top_models = comparison_df.head(5)
-                # Sort metrics for easier viewing
-                metrics = ['Accuracy', 'Recall', 'Prec.', 'F1'] if problem_type == 'classification' else ['R2', 'MAE', 'RMSE']
-                
-                fig = go.Figure()
-                
-                for metric in metrics:
-                    fig.add_trace(go.Scatter(
-                        x=top_models['Model'],
-                        y=top_models[metric],
-                        mode='markers',
-                        marker=dict(size=12, symbol='circle'),
-                        name=metric
-                    ))
-                    
-                    # Add "sticks" for lollipop effect
-                    for i in range(len(top_models)):
-                        fig.add_shape(
-                            type='line',
-                            x0=top_models.iloc[i]['Model'], y0=0,
-                            x1=top_models.iloc[i]['Model'], y1=top_models.iloc[i][metric],
-                            line=dict(color='lightgrey', width=1),
-                            layer='below'
-                        )
-                
-                fig.update_layout(
-                    title=f"Performance Comparison: {problem_type.capitalize()}",
-                    yaxis=dict(title="Score", range=[0, 1] if problem_type == 'classification' else None),
-                    xaxis=dict(title="Model"),
-                    template="plotly_white",
-                    height=500,
-                    hovermode="x unified"
-                )
-                st.plotly_chart(fig, use_container_width=True)
-
-
-        with tab2:
-            st.markdown("#### Full Leaderboard Comparison")
-            # Using highlight_max instead of background_gradient to avoid Matplotlib version conflicts
-            st.dataframe(comparison_df.style.highlight_max(axis=0, color='#E0E7FF'), use_container_width=True)
-
-
-        with tab3:
-            st.markdown("#### Model Decision Intelligence")
-            st.warning("⚛️ **Explainable AI:** Understanding the 'Why' behind predictions.")
-            
-            if problem_type == 'classification':
-                from pycaret.classification import interpret_model, plot_model
-            else:
-                from pycaret.regression import interpret_model, plot_model
-            
-            shap_success = False
-            try:
-                # Capture the SHAP plot provided by PyCaret
-                with st.spinner("Generating SHAP explanations..."):
-                    # Forcing plot to save and not return anything to avoid display issues
-                    interpret_model(model, save=True)
-                    if os.path.exists('SHAP Values.png'):
-                        st.image('SHAP Values.png', caption="SHAP Global Feature Importance", use_container_width=True)
-                        shap_success = True
-            except:
-                pass
-            
-            if not shap_success:
-                st.info("💡 **Switching to Classic Interpretability:** SHAP is unavailable for this model type or environment. Using standard feature importance.")
+            with viz_tabs[0]:
                 try:
-                    plot_model(model, plot='feature', save=True)
-                    if os.path.exists('Feature Importance.png'):
-                        st.image('Feature Importance.png', caption="Standard Feature Importance Analysis", use_container_width=True)
-                except Exception as e:
-                    st.error("Model interpretability visualization is currently unavailable.")
-
-
-
-        with tab4:
-            st.markdown("#### Performance Visualizations")
+                    plot_model(model, plot='confusion_matrix', save=True, verbose=False)
+                    st.image('Confusion Matrix.png')
+                except:
+                    st.info("Visualization not available")
             
-            if problem_type == 'classification':
-                from pycaret.classification import plot_model
-                v_col1, v_col2 = st.columns(2)
-                with v_col1:
-                    try:
-                        plot_model(model, plot='confusion_matrix', save=True)
-                        if os.path.exists('Confusion Matrix.png'):
-                            st.image('Confusion Matrix.png', caption="Confusion Matrix", use_container_width=True)
-                    except Exception as e:
-                        st.error("Confusion Matrix unavailable for this model.")
-                with v_col2:
-                    try:
-                        plot_model(model, plot='auc', save=True)
-                        if os.path.exists('AUC.png'):
-                            st.image('AUC.png', caption="AUC-ROC Curve", use_container_width=True)
-                    except Exception as e:
-                        st.error("AUC-ROC Curve unavailable for this model.")
-
-            else:
-                from pycaret.regression import plot_model
-                v_col1, v_col2 = st.columns(2)
-                with v_col1:
-                    try:
-                        plot_model(model, plot='residuals', save=True)
-                        if os.path.exists('Residuals.png'):
-                            st.image('Residuals.png', caption="Residuals Analysis", use_container_width=True)
-                    except Exception as e:
-                        st.error("Residuals Analysis unavailable.")
-                with v_col2:
-                    try:
-                        plot_model(model, plot='error', save=True)
-                        if os.path.exists('Prediction Error.png'):
-                            st.image('Prediction Error.png', caption="Prediction Error", use_container_width=True)
-                    except Exception as e:
-                        st.error("Prediction Error chart unavailable.")
-
-
+            with viz_tabs[1]:
+                try:
+                    plot_model(model, plot='auc', save=True, verbose=False)
+                    st.image('AUC.png')
+                except:
+                    st.info("Visualization not available")
+            
+            with viz_tabs[2]:
+                try:
+                    plot_model(model, plot='feature', save=True, verbose=False)
+                    st.image('Feature Importance.png')
+                except:
+                    st.info("Feature importance not available for this model")
+        
+        else:  # Regression
+            viz_tabs = st.tabs(["Residuals", "Prediction Error", "Feature Importance"])
+            
+            with viz_tabs[0]:
+                try:
+                    plot_model(model, plot='residuals', save=True, verbose=False)
+                    st.image('Residuals.png')
+                except:
+                    st.info("Visualization not available")
+            
+            with viz_tabs[1]:
+                try:
+                    plot_model(model, plot='error', save=True, verbose=False)
+                    st.image('Prediction Error.png')
+                except:
+                    st.info("Visualization not available")
+            
+            with viz_tabs[2]:
+                try:
+                    plot_model(model, plot='feature', save=True, verbose=False)
+                    st.image('Feature Importance.png')
+                except:
+                    st.info("Feature importance not available")
         
         # Navigation
         st.markdown("---")
@@ -1101,9 +1066,7 @@ elif st.session_state.page == 'Testing':
         st.warning("⚠️ Please train a model first!")
         st.stop()
     
-    st.markdown("<h1>🧪 Testing & Deployment Hub</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 1.2rem; color: #64748B; margin-bottom: 2rem;'>Validate your model with new data and integrate it into real-world applications.</p>", unsafe_allow_html=True)
-
+    st.markdown("<h1>🧪 Model Testing & Deployment</h1>", unsafe_allow_html=True)
     
     problem_type = st.session_state.problem_type
     model = st.session_state.best_model
@@ -1160,12 +1123,10 @@ elif st.session_state.page == 'Testing':
                     predicted_class = prediction['prediction_label'].values[0]
                     
                     st.markdown(f"""
-                    <div style='background: white; border: 2px solid #4F46E5; border-radius: 12px; padding: 2rem; text-align: center; box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1);'>
-                        <h4 style='color: #64748B; margin: 0; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;'>Predicted Category</h4>
-                        <h1 style='color: #4F46E5; margin: 0.5rem 0; font-size: 3.5rem !important;'>{predicted_class}</h1>
+                    <div class='success-box'>
+                        <h2 style='margin: 0; color: white;'>Predicted Class: {predicted_class}</h2>
                     </div>
                     """, unsafe_allow_html=True)
-
                     
                     # Probabilities
                     prob_cols = [col for col in prediction.columns if col.startswith('prediction_score')]
@@ -1180,12 +1141,10 @@ elif st.session_state.page == 'Testing':
                     predicted_value = prediction['prediction_label'].values[0]
                     
                     st.markdown(f"""
-                    <div style='background: white; border: 2px solid #4F46E5; border-radius: 12px; padding: 2rem; text-align: center; box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1);'>
-                        <h4 style='color: #64748B; margin: 0; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;'>Predicted Value</h4>
-                        <h1 style='color: #4F46E5; margin: 0.5rem 0; font-size: 3.5rem !important;'>{predicted_value:.2f}</h1>
+                    <div class='success-box'>
+                        <h2 style='margin: 0; color: white;'>Predicted Value: {predicted_value:.2f}</h2>
                     </div>
                     """, unsafe_allow_html=True)
-
                 
                 st.markdown("**Input Values:**")
                 st.dataframe(input_df, use_container_width=True)
@@ -1258,8 +1217,8 @@ elif st.session_state.page == 'Testing':
 # Footer
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
-<div style='text-align: center; padding: 1rem; color: rgba(255,255,255,0.4); font-size: 0.7rem;'>
-    <p style='margin: 0;'>© 2026 B.Tech Major Project Submission</p>
-    <p style='margin: 0.5rem 0 0 0;'>Developed by Sudee | Powered by PyCaret 3.2</p>
+<div style='text-align: center; padding: 1rem; color: rgba(255,255,255,0.6); font-size: 0.75rem;'>
+    <p style='margin: 0;'>© 2026 AutoML Platform Pro</p>
+    <p style='margin: 0.5rem 0 0 0;'>Powered by PyCaret v3.2</p>
 </div>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)
